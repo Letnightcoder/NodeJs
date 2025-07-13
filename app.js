@@ -1,20 +1,32 @@
 const fs = require("fs");
+const http = require("http");
 
-fs.readFile('example.txt','utf-8',(err, data) =>{
-    if(err){
-        console.log(err);
-    } else{
-        console.log(data);
-    }
-})
+// fs.readFile('example.txt','utf-8',(err, data) =>{
+//     if(err){
+//         console.log(err);
+//     } else{
+//         console.log(data);
+//     }
+// })
 
 
-const content = 'Hello, Nodejs'
+// const content = 'Hello, Nodejs'
 
-fs.writeFile('output.txt', content, (err)=>{
-    if(err){
-        console.log(err);
-        return
-    };
-    console.log('The file written successfully!');
-})
+// fs.writeFile('output.txt', content, (err)=>{
+//     if(err){
+//         console.log(err);
+//         return
+//     };
+//     console.log('The file written successfully!');
+// })
+
+
+const server = http.createServer((req, res)=>{
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html'); // text/plain
+    res.end('Hello, Node.js Server!');
+});
+
+server.listen(3000, () => {
+    console.log('Server running at http://localhost:3000');
+});
