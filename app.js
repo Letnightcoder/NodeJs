@@ -75,6 +75,25 @@ const lodash = require("lodash");
 // console.log(math.divide(10, 2));
 
 
-const array = [1, 2, 3, 4, 5];
-const reversed = lodash.reverse(array);
-console.log(reversed);
+// const array = [1, 2, 3, 4, 5];
+// const reversed = lodash.reverse(array);
+// console.log(reversed);
+
+
+const readableStream = fs.createReadStream('example.txt', {encoding: 'utf-8'});
+readableStream.on('data', (chunk) => {
+    console.log(chunk);
+})
+readableStream.on('end', () => {
+    console.log("Done!");
+})
+readableStream.on('error', (err) => {
+    console.log(err);
+})
+
+const writableStream = fs.createWriteStream('output2.txt'); // it automatically creates the file
+writableStream.write('Hello, Nodejs');
+writableStream.end();
+writableStream.on('finish', () => {
+    console.log("Done!");
+})
