@@ -5,6 +5,8 @@ const os = require("os");
 const url = require("url");
 const crypto = require("crypto");
 
+const sayName = require("./greetings.js");
+
 // fs.readFile('example.txt','utf-8',(err, data) =>{
 //     if(err){
 //         console.log(err);
@@ -58,6 +60,10 @@ const crypto = require("crypto");
 // console.log(myUrl.hash);
 
 
-const hash = crypto.createHash('sha256');
-hash.update('Hello world');
-console.log(hash.digest('hex'));
+// const hash = crypto.createHash('sha256');
+// hash.update('Hello world');
+// console.log(hash.digest('hex'));
+
+
+const message = sayName("Nodejs");
+console.log(message);
