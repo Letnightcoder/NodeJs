@@ -6,6 +6,7 @@ const url = require("url");
 const crypto = require("crypto");
 const sayName = require("./greetings.js");
 const math = require("./math.js");
+const lodash = require("lodash");
 
 // fs.readFile('example.txt','utf-8',(err, data) =>{
 //     if(err){
@@ -68,7 +69,12 @@ const math = require("./math.js");
 // const message = sayName("Nodejs");
 // console.log(message);
 
-console.log(math.add(10, 2));
-console.log(math.subtract(10, 2));
-console.log(math.multiply(10, 2));
-console.log(math.divide(10, 2));
+// console.log(math.add(10, 2));
+// console.log(math.subtract(10, 2));
+// console.log(math.multiply(10, 2));
+// console.log(math.divide(10, 2));
+
+
+const array = [1, 2, 3, 4, 5];
+const reversed = lodash.reverse(array);
+console.log(reversed);
