@@ -4,8 +4,8 @@ const path = require("path");
 const os = require("os");
 const url = require("url");
 const crypto = require("crypto");
-
 const sayName = require("./greetings.js");
+const math = require("./math.js");
 
 // fs.readFile('example.txt','utf-8',(err, data) =>{
 //     if(err){
@@ -65,5 +65,10 @@ const sayName = require("./greetings.js");
 // console.log(hash.digest('hex'));
 
 
-const message = sayName("Nodejs");
-console.log(message);
+// const message = sayName("Nodejs");
+// console.log(message);
+
+console.log(math.add(10, 2));
+console.log(math.subtract(10, 2));
+console.log(math.multiply(10, 2));
+console.log(math.divide(10, 2));
