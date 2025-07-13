@@ -2,6 +2,7 @@ const fs = require("fs");
 const http = require("http");
 const path = require("path");
 const os = require("os");
+const url = require("url");
 
 // fs.readFile('example.txt','utf-8',(err, data) =>{
 //     if(err){
@@ -41,7 +42,16 @@ const os = require("os");
 // console.log(fullPath);
 
 
-console.log('Platform: ', os.platform());
-console.log('CPU Architecture: ', os.arch());
-console.log('Total memory: ', os.totalmem());
-console.log('Free memory: ', os.freemem());
+// console.log('Platform: ', os.platform());
+// console.log('CPU Architecture: ', os.arch());
+// console.log('Total memory: ', os.totalmem());
+// console.log('Free memory: ', os.freemem());
+
+
+const myUrl = new URL('http://mywebsite.com:8000/path/name?query=string#hash');
+
+console.log(myUrl.host);
+console.log(myUrl.pathname);
+console.log(myUrl.search);
+console.log(myUrl.searchParams.get('query'));
+console.log(myUrl.hash);
