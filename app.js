@@ -80,20 +80,43 @@ const lodash = require("lodash");
 // console.log(reversed);
 
 
+// const readableStream = fs.createReadStream('example.txt', {encoding: 'utf-8'});
+// readableStream.on('data', (chunk) => {
+//     console.log(chunk);
+// })
+// readableStream.on('end', () => {
+//     console.log("Done!");
+// })
+// readableStream.on('error', (err) => {
+//     console.log(err);
+// })
+
+// const writableStream = fs.createWriteStream('output2.txt'); // it automatically creates the file
+// writableStream.write('Hello, Nodejs');
+// writableStream.end();
+// writableStream.on('finish', () => {
+//     console.log("Done!");
+// })
+
+
+//Piping Streams
 const readableStream = fs.createReadStream('example.txt', {encoding: 'utf-8'});
-readableStream.on('data', (chunk) => {
-    console.log(chunk);
-})
-readableStream.on('end', () => {
+const writableStream = fs.createWriteStream('output3.txt');
+readableStream.pipe(writableStream);
+writableStream.on('finish', () => {
     console.log("Done!");
 })
-readableStream.on('error', (err) => {
-    console.log(err);
+
+const readline = require('readline');
+const readableStream2 = fs.createReadStream('example.txt');
+const rl = readline.createInterface({
+    input: readableStream2
+});
+
+rl.on('line', (line) => {
+    console.log('Line: ',line);
 })
 
-const writableStream = fs.createWriteStream('output2.txt'); // it automatically creates the file
-writableStream.write('Hello, Nodejs');
-writableStream.end();
-writableStream.on('finish', () => {
+rl.on('close', () => {
     console.log("Done!");
 })
