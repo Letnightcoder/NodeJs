@@ -122,79 +122,79 @@ const lodash = require("lodash");
 // })
 
 
-// Creating a directory
-fs.mkdir('newDirectory', (err) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log('Directory created successfully!');
-})
+// // Creating a directory
+// fs.mkdir('newDirectory', (err) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log('Directory created successfully!');
+// })
 
-fs.mkdirSync("newDirectory2");
-console.log('Directory created successfully!');
+// fs.mkdirSync("newDirectory2");
+// console.log('Directory created successfully!');
 
-// Reading a directory
-fs.readdir('./', (err, files) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log(files);
-})
+// // Reading a directory
+// fs.readdir('./', (err, files) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log(files);
+// })
 
-const files = fs.readdirSync('./');
-console.log(files);
+// const files = fs.readdirSync('./');
+// console.log(files);
 
-// Checking if a directory exists
-const dirName = 'newDirectory';
-    if(fs.existsSync(dirName)){
-        console.log('Directory exists!');
-        return;
-    } else {
-    console.log('Directory does not exists!');
-}
+// // Checking if a directory exists
+// const dirName = 'newDirectory';
+//     if(fs.existsSync(dirName)){
+//         console.log('Directory exists!');
+//         return;
+//     } else {
+//     console.log('Directory does not exists!');
+// }
 
-// Deleting a directory
-fs.rmdir('newDirectory2', (err) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log('Directory deleted successfully!');
-})
+// // Deleting a directory
+// fs.rmdir('newDirectory2', (err) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log('Directory deleted successfully!');
+// })
 
-fs.rm('newDirectory',{recursive: true}, (err) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log('Directory deleted successfully!');
-})
+// fs.rm('newDirectory',{recursive: true}, (err) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log('Directory deleted successfully!');
+// })
 
-// Renaming a directory
-fs.rename('newDirectory', 'newDirectoryRenamed', (err) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log('Directory renamed successfully!');
-})
+// // Renaming a directory
+// fs.rename('newDirectory', 'newDirectoryRenamed', (err) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log('Directory renamed successfully!');
+// })
 
-// Getting Directory Stats
-fs.stat('./', (err, stats) => {
-    if(err){
-        console.log(err);
-        return;
-    }
-    console.log(stats);
-    console.log(stats.isDirectory());
-})
+// // Getting Directory Stats
+// fs.stat('./', (err, stats) => {
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log(stats);
+//     console.log(stats.isDirectory());
+// })
 
-// watching a directory
-fs.watch('./', (event, filename) => {
-    console.log(event);
-    if(filename){
-        console.log(filename);
-    }
-})
+// // watching a directory
+// fs.watch('./', (event, filename) => {
+//     console.log(event);
+//     if(filename){
+//         console.log(filename);
+//     }
+// })
